@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화별 예매 현황</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>영화별 예매 현황</h2>
+
+    <label for="movie-selection">영화 선택:</label>
+    <select id="movie-selection">
+        <option value="movie1">영화 1</option>
+        <option value="movie2">영화 2</option>
+        <option value="movie3">영화 3</option>
+        <option value="movie4">영화 4</option>
+    </select>
+
+    <table id="seats-status">
+        <thead>
+            <tr>
+                <th>좌석</th>
+                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+                <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 좌석 현황 표시 -->
+        </tbody>
+    </table>
+
+    <script>
+        var movieSeats = {
+            'movie1': generateSeatsStatus(['A1', 'B3', 'C5']), // 예매된 좌석 예시
+            'movie2': generateSeatsStatus(['A2', 'G10', 'F1']),
+            // movie3와 movie4에 대한 예매 현황
+        };
+
+        function generateSeatsStatus(bookedSeats) {
+            var status = {};
+            for (var row = 'A'.charCodeAt(0); row <= 'G'.charCodeAt(0); row++) {
+                status[String.fromCharCode(row)] = {};
+                for (var num = 1; num <= 10; num++) {
+                    var seat = String.fromCharCode(row) + num;
+                    status[String.fromCharCode(row)][num] = bookedSeats.includes(seat) ? 'user' + Math.floor(Math.random() * 1000) : '빈 좌석';
+                }
+            }
+            return status;
+        }
+
+        document.getElementById('movie-selection').addEventListener('change', function() {
+            var selectedMovie = this.value;
+            updateSeatsTable(selectedMovie);
+        });
+
+        function updateSeatsTable(movie) {
+            var tbody = document.getElementById('seats-status').getElementsByTagName('tbody')[0];
+            tbody.innerHTML = ''; // 테이블 초기화
+
+            for (var row in movieSeats[movie]) {
+                var tr = tbody.insertRow();
+                var th = document.createElement('th');
+                th.innerHTML = row;
+                tr.appendChild(th);
+
+                for (var num = 1; num <= 10; num++) {
+                    var td = tr.insertCell();
+                    td.innerHTML = movieSeats[movie][row][num];
+                }
+            }
+        }
+
+        // 초기 테이블 세팅
+        updateSeatsTable('movie1');
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 정보 수정</title>
+</head>
+<body>
+
+    <h2>영화 정보 수정</h2>
+    <form id="edit-movie-form">
+        영화 제목: <input type="text" id="movie-title"><br>
+        영화 설명: <textarea id="movie-description"></textarea><br>
+        장르: <input type="text" id="movie-genre"><br>
+        개봉일: <input type="date" id="movie-release-date"><br>
+        영화 포스터: <input type="file" id="movie-image" accept="image/*"><br>
+        <button type="submit">등록하기</button>
+    </form>
+
+    <script>
+        document.getElementById('edit-movie-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var title = document.getElementById('movie-title').value;
+            var description = document.getElementById('movie-description').value;
+            var genre = document.getElementById('movie-genre').value;
+            var releaseDate = document.getElementById('movie-release-date').value;
+            var imageFile = document.getElementById('movie-image').files[0];
+
+            console.log('수정된 영화 정보:', title, description, genre, releaseDate);
+            if (imageFile) {
+                console.log('업로드된 이미지:', imageFile.name, '크기:', imageFile.size);
+            }
+            // 여기에 영화 정보 수정 로직을 추가하세요.
+        });
+    </script>
+
+</body>
+</html>

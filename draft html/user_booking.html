@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 예매</title>
+    <style>
+        .seat {
+            padding: 5px;
+            margin: 2px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: #6c7ae0;
+        }
+
+        .seat-row {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>영화 예매</h2>
+
+    <label for="viewer-type">관람자 유형:</label>
+    <select id="viewer-type">
+        <option value="child">어린이</option>
+        <option value="teen">청소년</option>
+        <option value="adult">성인</option>
+    </select>
+
+    <label for="number-of-viewers">인원수:</label>
+    <input type="number" id="number-of-viewers" min="1" max="10">
+
+    <div id="seats">
+        <h3>좌석 선택</h3>
+        <!-- 좌석 A1부터 G10까지 -->
+        <div class="seat-row">
+            <!-- 좌석 생성 -->
+            <!-- 예: A1, A2, ..., A10 -->
+            <!-- 각 줄에 대한 반복 -->
+            <!-- 추가 줄(B, C, ...) -->
+        </div>
+    </div>
+
+    <button id="book-ticket">예매하기</button>
+
+    <script>
+        // 좌석 생성
+        const seatContainer = document.getElementById('seats');
+        for (let row = 'A'.charCodeAt(0); row <= 'G'.charCodeAt(0); row++) {
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'seat-row';
+            for (let num = 1; num <= 10; num++) {
+                const seatButton = document.createElement('button');
+                seatButton.className = 'seat';
+                seatButton.textContent = String.fromCharCode(row) + num;
+                rowDiv.appendChild(seatButton);
+            }
+            seatContainer.appendChild(rowDiv);
+        }
+
+        var selectedSeats = [];
+        var maxSeats = 1; // 기본 선택 가능 좌석 수
+
+        document.getElementById('number-of-viewers').addEventListener('change', function() {
+            maxSeats = parseInt(this.value);
+            selectedSeats = []; // 인원 수 변경 시 선택된 좌석 초기화
+            document.querySelectorAll('.seat.selected').forEach(function(seat) {
+                seat.classList.remove('selected');
+            });
+        });
+
+        document.querySelectorAll('.seat').forEach(function(seat) {
+            seat.addEventListener('click', function() {
+                if (selectedSeats.length < maxSeats && !this.classList.contains('selected')) {
+                    this.classList.add('selected');
+                    selectedSeats.push(this.textContent);
+                } else if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selectedSeats.splice(selectedSeats.indexOf(this.textContent), 1);
+                } else {
+                    alert('최대 선택 가능한 좌석 수를 초과했습니다.');
+                }
+            });
+        });
+
+        document.getElementById('book-ticket').addEventListener('click', function() {
+            var viewerType = document.getElementById('viewer-type').value;
+            if (selectedSeats.length === maxSeats) {
+                console.log('예매 정보:', viewerType, selectedSeats);
+                // 여기에 예매 정보를 서버로 전송하는 로직을 추가하세요.
+            } else {
+                alert('인원수에 맞게 좌석을 선택해주세요.');
+            }
+        });
+    </script>
+
+</body>
+</html>
