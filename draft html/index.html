@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>영화 예매 시스템</title>
 </head>
 <body>
@@ -22,10 +23,12 @@
         <h2>영화 랭킹</h2>
         <div id="movies" style="display: flex; flex-wrap: wrap;">
             <!-- 영화 목록 -->
+            <form action="movieinfo.jsp" method="get">
             <div class="movie" style="flex: 1; margin: 5px; min-width: 200px;">
                 <h3>1. 영화 제목 1</h3>
                 <br><br><br>
-                <p> (영화 포스터 이미지)</p>
+                <!--<p><img src="poster.webp"></p>-->
+                <input type="submit"  style="background-image: url('./poster.webp'); width: 180px;height: 180px;">
                 <br><br><br>
                 <p>영화 설명...</p>
                 <button>예매하기</button>
@@ -53,6 +56,7 @@
             <br><br><br>            
             <p>영화 설명...</p>
             <button>예매하기</button>
+            </form>
         </div>
             <!-- 추가 영화 목록 -->
         </div>

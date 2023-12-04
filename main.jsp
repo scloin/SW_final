@@ -22,6 +22,15 @@
     }
     a {text-decoration:none; color: inherit;}
     
+    @keyframes glow {
+        0% { text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000; }
+        50% { text-shadow: 0 0 20px #ffd300, 0 0 30px #ffd300, 0 0 40px #ffd300; }
+        100% { text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000; }
+    }
+    span {
+        animation: glow 1.1s infinite;
+    }
+
 
     body {
         background-color: #000000;
@@ -32,7 +41,7 @@
 <body>
 <table style="width:1000; align:center; margin-left:auto; margin-right:auto;">
     <tr>
-    <td style="width:700;" id="Logo"><a href="main.jsp">누누cinema</a></td>
+    <td style="width:700;" id="Logo"><a href="main.jsp">열<span style="color: #FFD300">무비</span>빔밥</a></td>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="login/logout.jsp">
         로그아웃</a>
     </td>
