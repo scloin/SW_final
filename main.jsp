@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500;600;900&display=swap');
     #Logo {
         font-size: 64px; 
         font-family: Noto Sans KR Black;
@@ -17,9 +17,18 @@
     }
 
     #poster {
-        width: 300px;
-        height: 400px;
+        width: 240px;
+        height: 320px;
+        border-radius: 10px;
     }
+
+    #moviename {
+        font-size: 20px; 
+        font-family: Noto Sans KR Medium;
+        color: #ffffff;
+    }
+
+
     a {text-decoration:none; color: inherit;}
     
     @keyframes glow {
@@ -54,16 +63,7 @@
     </tr>
 </table>
 <br><br><br>
-<table style="width:1200; text-align:center; margin-left:auto; margin-right:auto; background-color:#3f3e3e">
-    <tr>
-    <td style=""><a href="movie/movie.jsp"><img id="poster" src="main_ui/images.jpg"/></a></td>
-    </td>
-    <td><a href="movie/movie.jsp"><img id="poster" src="main_ui/images.jpg"/></a></td>
-    </td>
-    <td><a href="movie/movie.jsp"><img id="poster" src="main_ui/images.jpg"/></a></td>
-    </td>
-    </tr>
-</table>
+<jsp:include page="main_ui/rating.jsp" flush="false"/>
 
 </body>
 </html>
