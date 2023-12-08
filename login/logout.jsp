@@ -6,6 +6,9 @@
 </head>
 <br>
 <body>
-this is logout page
+
+<%@ include file="/noonoocine/main.html" %>>
+<p id="plaintext">this is logout page</p>
+
 </body>
 </html>

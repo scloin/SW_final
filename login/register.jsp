@@ -6,6 +6,7 @@
 </head>
 <br>
 <body>
-this is register page
+<%@ include file="/noonoocine/main.html" %>
+<p id="plaintext">this is register page</p>
 </body>
 </html>

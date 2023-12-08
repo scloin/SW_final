@@ -29,7 +29,7 @@ if (rs.next()){
 }
 rs.close();
 pstmt.close();
-info[3]="/noonoo/noonoocine/"+info[3];
+info[3]="/swsw/noonoocine/"+info[3];
 %>
 <table id="plaintext" style="width:700px; align:center; margin-left:auto; margin-right:auto;" >
 <tr><td>

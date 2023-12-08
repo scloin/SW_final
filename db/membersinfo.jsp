@@ -6,6 +6,7 @@
 </head>
 <br>
 <body>
-this is members info
+<%@ include file="/noonoocine/main.html" %>>
+<p id="plaintext">this is members info</p>
 </body>
 </html>
