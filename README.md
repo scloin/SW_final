@@ -11,8 +11,9 @@
 ### DB SQL 추가
 ```cmd, bash
 # mysql 접속 후 원하는 DB 선택
-source <프로젝트위치>/noonoocine/db/DB_GEN.sql
-#알아서 있으면 지우고 다시 만듬
+# source <프로젝트위치>/noonoocine/db/DB_GEN.sql
+sql파일 내용 복사 후 붙여넣기
+# 알아서 있으면 지우고 다시 만듬
 ```
 ❗만약 한글이 안되는 경우(window) \
 https://co-deok.tistory.com/66 참조
