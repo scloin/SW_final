@@ -11,8 +11,9 @@
 ### DB SQL 추가
 ```cmd, bash
 # mysql 접속 후 원하는 DB 선택
-source <프로젝트위치>/noonoocine/db/DB_GEN.sql
-#알아서 있으면 지우고 다시 만듬
+# source <프로젝트위치>/noonoocine/db/DB_GEN.sql
+sql파일 내용 복사 후 붙여넣기
+# 알아서 있으면 지우고 다시 만듬
 ```
 ❗만약 한글이 안되는 경우(window) \
 https://co-deok.tistory.com/66 참조
@@ -27,3 +28,7 @@ main.jsp 에서 포스터 클릭시 (Summit button) \
 movie/movie.jsp로 클릭한 영화 숫자, 표시됐던 영화 이름들이 넘어감
 숫자로 영화 이름을 찾고 DB에서 세부정보 검색
 화면에 보여줌
+
+## 참고 사항
+
+현재 파일들 주소가 절대주소로, 프로젝트 명이 swsw가 아니면 오류날수도 있음
