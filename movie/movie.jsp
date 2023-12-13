@@ -31,11 +31,11 @@ rs.close();
 pstmt.close();
 info[3]="/swsw/noonoocine/"+info[3];
 %>
-<table id="plaintext" style="width:700px; align:center; margin-left:auto; margin-right:auto;" >
+<table id="plaintext" style="border-spacing: 30px; align:center; margin-left:auto; margin-right:auto;" >
 <tr><td>
 <img src=<%=info[3] %> width="345px" height="500px">
 </td>
-<td id="movieinfo">
+<td id="movieinfo" style="width:345px;" >
 <p>영화 이름 : <%=moviename %></p>
 <p>장르 : <%=info[0] %></p>
 <p>감독 : <%=info[2] %></p>

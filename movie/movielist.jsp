@@ -9,7 +9,7 @@
 <br>
 <body>
 <%@ include file="/noonoocine/main.html" %>
-<table id="menu" style="width:700px; align:center; margin-left:auto; margin-right:auto;" >
+<table id="menu" style="border-spacing: 10px; width:700px; align:center; margin-left:auto; margin-right:auto;" >
 <%
 
 String msg = null;
@@ -35,7 +35,7 @@ while(rs.next()){
 <tr><td>
 <img src=<%=info[4] %> width="69px" height="100px">
 </td>
-<td style="background-color: <%=bgc%>; border-radius:10px;">
+<td style="background-color: <%= bgc%>; border-radius:10px;">
 <p>영화 이름 : <%=info[0] %><br>
 장르 : <%=info[1] %><br>
 개봉 정보 : <%=info[2] %></p>
