@@ -1,4 +1,6 @@
+<html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500;600;900&display=swap');
     #Logo {
@@ -53,12 +55,14 @@
         background-color: #000000;
     }
 </style>
+</head>
+<body>
 <br>
 <table style="width:1000; align:center; margin-left:auto; margin-right:auto;">
     <tr>
-    <td style="width:700;" id="Logo"><a href="/swsw/noonoocine/main.jsp">열<span style="color: #FFD300">무비</span>빔밥</a></td>
+    <td style="width:700;" id="Logo"><a href=<%=request.getContextPath()+"/noonoocine/main.jsp"%>>열<span style="color: #FFD300">무비</span>빔밥</a></td>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/movie/movielist.jsp">
-        영화목록</a>
+        영화목록 </a>
     </td>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/logout.jsp">
         로그아웃</a>
@@ -72,3 +76,5 @@
     </tr>
 </table>
 <br><br><br>
+</body>
+</html>

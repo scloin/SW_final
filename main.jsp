@@ -5,7 +5,7 @@
 </head>
 <br>
 <body>
-<%@ include file="main.html" %>>
+<jsp:include page="head.jsp" flush="false" />
 <jsp:include page="main_ui/rating.jsp" flush="false"/>
 
 </body>

@@ -8,7 +8,7 @@
 </head>
 <br>
 <body>
-<%@ include file="/noonoocine/main.html" %>
+<%@ include file="/noonoocine/head.jsp" %>
 <table id="menu" style="border-spacing: 10px; width:700px; align:center; margin-left:auto; margin-right:auto;" >
 <%
 

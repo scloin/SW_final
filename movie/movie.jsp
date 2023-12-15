@@ -8,10 +8,9 @@
 </head>
 <br>
 <body>
-<%@ include file="/noonoocine/main.html" %>
+<%@ include file="/noonoocine/head.jsp" %>
 <%
-String movienum=request.getParameter("movie");
-String moviename=request.getParameter(movienum);
+String moviename=request.getParameter("movie");
 
 String msg = null;
 String sql = "SELECT * From movie Where movieNm='"+moviename+"';";
