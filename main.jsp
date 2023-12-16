@@ -5,8 +5,8 @@
 </head>
 <br>
 <body>
-<jsp:include page="head.jsp" flush="false" />
-<jsp:include page="main_ui/rating.jsp" flush="false"/>
+<jsp:include page="head.jsp" flush="false" /><br><br>
+<jsp:include page="main_ui/rating.jsp" flush="false"/><br>
 <jsp:include page="main_ui/comingsoon.jsp" flush="false"/>
 </body>
 </html>

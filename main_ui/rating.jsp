@@ -34,7 +34,7 @@ pstmt.close();
 
 %>
 <p id="movieinfo" style="width:1200; text-align:left; margin-left:auto; margin-right:auto; background-color:#000000">영화 차트</p>
-<form action="movie/movie.jsp" method="get">
+<form action="movie/movieinfo.jsp" method="get">
 <table style="border-radius: 10px; width:1200; height:425px; text-align:center; margin-left:auto; margin-right:auto; background-color:#242424">
     <tr>
     <% for (i=0; i<4; i++){ %>
@@ -45,7 +45,7 @@ pstmt.close();
     <% for (i=0; i<4; i++){ %>
     <td>
     <p id="moviename"><%=movies[i] %></br>
-    <%=Math.round(Float.parseFloat(stars[i]) *10)/10.0 %>/5.0</p>
+    ⭐<%=Math.round(Float.parseFloat(stars[i]) *10)/10.0 %>/5.0</p>
     </td><%}%>
     </tr>
 </table>
