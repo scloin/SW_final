@@ -1,11 +1,12 @@
 <html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<title>열무비빔밥</title>
 <head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500;600;900&display=swap');
     #Logo {
-        font-size: 64px; 
-        font-family: Noto Sans KR Black;
+        font-size: 64px;
+    	font-family: Noto Sans KR Black;
         color: #ffffff;
     }
 
@@ -13,6 +14,7 @@
         font-size: 20px; 
         font-family: Noto Sans KR Light;
         color: #ffffff;
+        
     }
 
     #poster {
@@ -33,12 +35,23 @@
     }
     
     #movieinfo {
+    
         font-size: 30px; 
         font-family: Noto Sans KR Medium;
         color: #ffffff;
     }
 
-
+	#movielist{
+	    font-size: 20px; 
+        font-family: Noto Sans KR Light;
+        color: #ffffff;
+		border-spacing: 10px; 
+		width:700px; 
+		align:center; 
+		margin-left:auto; 
+		margin-right:auto;
+	
+	}
     a {text-decoration:none; color: inherit;}
     
     @keyframes glow {
