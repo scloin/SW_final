@@ -6,7 +6,7 @@
 </head>
 <br>
 <body>
-<%@ include file="/noonoocine/main.html" %>
+<%@ include file="/noonoocine/head.jsp" %>
 <p id="plaintext">this is register page</p>
 </body>
 </html>
