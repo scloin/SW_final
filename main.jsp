@@ -7,6 +7,6 @@
 <body>
 <jsp:include page="head.jsp" flush="false" />
 <jsp:include page="main_ui/rating.jsp" flush="false"/>
-
+<jsp:include page="main_ui/comingsoon.jsp" flush="false"/>
 </body>
 </html>
