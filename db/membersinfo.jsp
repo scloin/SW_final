@@ -6,7 +6,8 @@
 </head>
 <br>
 <body>
-<%@ include file="/noonoocine/main.html" %>>
+<%=request.getContextPath() %>
+<%@ include file="/noonoocine/head.jsp" %>
 <p id="plaintext">this is members info</p>
 </body>
 </html>
