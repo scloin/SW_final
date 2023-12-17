@@ -30,6 +30,7 @@
         font-size: 20px; 
         font-family: Noto Sans KR Medium;
         color: #ffffff;
+        
     }
     #gray {
     background-color: #242424;
@@ -160,33 +161,34 @@
 </style>
 </head>
 <body>
-<br>
 <table style="width:1000; align:center; margin-left:auto; margin-right:auto;">
     <tr>
     <td style="width:700;" id="Logo"><a href=<%=request.getContextPath()+"/noonoocine/main.jsp"%>>열<span id="glowingtitle" style="color: #FFD300">무비</span>빔밥</a></td>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/movie/movielist.jsp">
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/movie/movielist.jsp"%>>
         영화목록 </a>
     </td>
     <% if (session.getAttribute("id") != null) { %>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/logout.jsp">로그아웃</a>
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/login/logout.jsp"%>>로그아웃</a>
     </td>
     <% } else { %>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/login.jsp">로그인</a>
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/login/login.jsp"%>>로그인</a>
     </td>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/register.jsp">
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/login/register.jsp"%>>
         회원가입</a>
     </td>
     <% } %>
     <% if (session.getAttribute("auth") != null) { %>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/admin/admin.jsp">
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/admin/admin.jsp"%>>
         영화 추가</a>
     <% } else { %>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/db/membersinfo.jsp">
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/login/logincheck.jsp?userinfo=tr"%>>
         My Info</a>
     </td>
     <% } %>
     </tr>
 </table>
-<br><br><br>
+<p style="fontsize:10px">
+<br><br>
+</p>
 </body>
 </html>

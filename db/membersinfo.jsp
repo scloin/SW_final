@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 
 </head>
-<br>
 <body>
-<%=request.getContextPath() %>
 <%@ include file="/noonoocine/head.jsp" %>
 <p id="plaintext">this is members info</p>
 </body>

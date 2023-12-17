@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
   <title>영화 예매</title>
@@ -16,8 +16,10 @@
   </script>
 </head>
 <body>
+<%@ include file="/noonoocine/head.jsp" %>
+<div style="width:1000px; margin-left:auto; margin-right:auto; text-align:left;">
   <h2>영화 예매</h2>
-
+<div id="plaintext">
   <%String movie_title= String.valueOf(request.getParameter("movie"));%>
 
   선택한 영화는 [<%=movie_title%>] 입니다.<br><br>
@@ -43,5 +45,6 @@
     <input type="hidden" name="movie_title" value="<%=movie_title%>">
     <input type="submit" value="좌석 현황 확인">
   </form>
+ </div></div>
 </body>
 </html>

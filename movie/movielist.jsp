@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 </head>
-<br>
 <body>
 <%@ include file="/noonoocine/head.jsp" %>
 <table id="movielist" >

@@ -7,15 +7,23 @@
 <body>
 <%
 String bookingpage="../reservation/select_num.jsp";
+String mypage="../mypage/check_my_reservations.jsp";
 if (session.getAttribute("id")!=null){
-%>
-
-<jsp:forward page="<%= bookingpage %>"/>
-<%	
+	if (request.getParameter("booking")!=null){
+	%>
+	<jsp:forward page="<%= bookingpage %>"/>
+	<%	
+	}
+	else if (request.getParameter("userinfo")!=null){
+	%>
+	<jsp:forward page="<%= mypage %>"/>
+	<%	
+	}
+	
 }
 else{
 %>
-<jsp:forward page="login.jsp" >
+<jsp:forward page="../login/login.jsp" >
 <jsp:param name="warning" value="true"/>
 </jsp:forward>
 <%	

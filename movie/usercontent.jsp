@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="swsw.ConnectionContext" %>
 <%@ page import="java.sql.*" %>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">

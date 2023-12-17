@@ -3,14 +3,22 @@
 <head>
 <meta charset="UTF-8">
 </head>
-<br>
 <body>
 
 <%@ include file="/noonoocine/head.jsp" %>
-<p id="Logo">로그아웃 되었습니다!</p>
+<div id="Logo" style="text-align:center">로그아웃 되었습니다!</div>
 <% session.invalidate(); %>
-  <a href = "login.jsp" id="movieinfo" >로그인</a><br>
-  <a href = "../main.jsp" id="movieinfo" >처음으로</a><br>
+<br><br>
+<div style="text-align:center">
 
+  <a href = "login.jsp" id="movieinfo" >
+  <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+  로그인</div>
+  </a><br>
+  <a href = "../main.jsp" id="movieinfo" >
+  <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+  처음으로</div>
+  </a><br>
+</div>
 </body>
 </html>

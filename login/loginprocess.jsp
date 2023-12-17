@@ -7,8 +7,9 @@
 <meta charset="UTF-8">
 <title>loginprocess</title>
 </head>
-<body id="Logo" margin ="auto">
+<body>
 <%@ include file="/noonoocine/head.jsp" %>
+<div id="Logo" style="text-align:center">
 <%
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
@@ -46,22 +47,31 @@
 		    } catch (SQLException e) {
 		        e.printStackTrace();
 		    } 
-
+%>
+</div><br>
+<div style="text-align:center">
+<%
   
   String check = (String)session.getAttribute("id");
 
   if(authority){ 
 	  response.sendRedirect("../admin/admin.jsp"); 
  }
+  
   else {
 	  if(check != null) { %> 
-    <div style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href = "../main.jsp" id="movieinfo" >예매하러가기</a><br>
-    <div style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href = "logout.jsp" id="movieinfo" >로그아웃</a><br>
-    </div>
+    <a href = "../main.jsp" id="movieinfo" >
+    <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+    예매하러가기</div></a><br>
+    <a href = "logout.jsp" id="movieinfo" >
+    <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+    로그아웃</div></a><br>
     <% } else { %>
-    <div style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href = "login.jsp" id="movieinfo" >로그인 다시하기</a> 
-    </div>
+    <a href = "login.jsp" id="movieinfo" >
+    <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+    로그인 다시하기</div></a>
     <% } 
 }%>
+</div>
 </body>
 </html>

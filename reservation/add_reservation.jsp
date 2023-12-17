@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<%@ page import="thinkonweb.util.ConnectionContext" %>
+<%@ page import="swsw.ConnectionContext" %>
 <%@ page import="java.sql.*" %>
 
 <html>
@@ -11,7 +11,7 @@
   int adult_cnt = Integer.parseInt(request.getParameter("adult_cnt"));
   int child_cnt = Integer.parseInt(request.getParameter("child_cnt"));
   int totalCost = Integer.parseInt(request.getParameter("totalCost"));
-  String id = "12345"; //(String)session.getAttribute("user_id");
+  String id = (String)session.getAttribute("id");
   
   String insert = "insert into booking (movidCD, id, time, seat, adult, teenager, price) ";
   String movie_id = "(select movidCD from movie where movienm='"+movie_title+"'), ";

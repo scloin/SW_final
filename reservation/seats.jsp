@@ -1,11 +1,28 @@
-<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="swsw.ConnectionContext" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.sql.*" %>
 
 <html>
-<head><title>영화 예매</title></head>
+<head><title>영화 예매</title>
+<style>
+  #thea {
+    border-collapse: collapse;
+    font-size: 20px; 
+    font-family: Noto Sans KR Light;
+    color: #ffffff;
+  }
+  #thtd {
+
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+  }
+</style>
+</head>
 <body>
+<%@ include file="/noonoocine/head.jsp" %>
+<div id="plaintext" style="width:1000px; margin-left:auto; margin-right:auto; text-align:left;">
 <h2>영화 예매</h2>
   <%
   String movie_title=String.valueOf(request.getParameter("movie_title"));
@@ -15,20 +32,19 @@
   선택한 영화는 [<%=movie_title%>] 입니다.<br>
   선택한 인원 : 성인 <%=adult_cnt%>명, 청소년 <%=child_cnt%>명<br><br>
   
-<div id="seats">
 
     <h3>좌석 선택</h3>
     <form action="pay.jsp" onsubmit="return validateSeats()">
-      <table>
+      <table id="thea">
         <% 
         String rows = "ABCDEFG";
         int cols = 10;
         %>
 
         <tr>
-          <td></td> <% // 첫번째 칸 비우기, 열 레이블
+          <td id="thtd"></td> <% // 첫번째 칸 비우기, 열 레이블
           for (int col = 1; col <= cols; col++) { %>
-            <td><%=col%></td>
+            <td id="thtd"><%=col%></td>
           <% } %>
         </tr>
         
@@ -48,7 +64,7 @@
      
         for (int i = 0; i < rows.length(); i++) {
             %><tr>
-            <td><%=rows.charAt(i)%></td> <% // 행 레이블
+            <td  id="thtd"><%=rows.charAt(i)%></td> <% // 행 레이블
             for (int j = 1; j <= cols; j++) {
                 String seatId = "" + rows.charAt(i) + j;
                 boolean booked=false;
@@ -60,26 +76,17 @@
                 }
                 
                  if (!booked) {
-                    %><td><input type="checkbox" name="seat" value="<%=seatId%>" onclick="onCheckboxClick(this)"></td><%
+                    %><td id="thtd"><input type="checkbox" name="seat" value="<%=seatId%>" onclick="onCheckboxClick(this)"></td><%
                 }
                 else {
-                    %><td>X</td><%
+                    %><td id="thtd">X</td><%
                 }
             }%>
             </tr>
         <%}%>
       </table>
 </div>
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 10px;
-  }
-</style>
+
 
   <input type="hidden" name="movie_title" value="<%=movie_title%>">
   <input type="hidden" name="adult_cnt" value="<%=adult_cnt%>">
@@ -120,5 +127,6 @@
     return true; // 폼 제출을 계속
   }
 </script>
+</div>
 </body>
 </html>

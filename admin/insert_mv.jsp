@@ -48,7 +48,7 @@ try {
 %>
 
 <% if (succ == 1) { 
-		String path = "/swsw/noonoocine/"+ poster ;%>
+		String path =request.getContextPath()+ "/noonoocine/"+ poster ;%>
 
 		<p id='gra' style='text-align: center;' >
 		영화 코드 : <%= movieCD %><br>
