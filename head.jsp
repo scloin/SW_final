@@ -31,13 +31,53 @@
         font-family: Noto Sans KR Medium;
         color: #ffffff;
     }
-    
+    #gray {
+    background-color: #242424;
+    border-radius: 10px;
+	}
+	#me {
+  		font-size: 20px; 
+        font-family: Noto Sans KR Light;
+        color: #ffffff;
+	}
+	input[type="text"],
+	input[type="password"] {
+    all: unset;
+    background-color: #242424;
+    color: white;    
+	}
+    h2 {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+	}
+   .submit-btn {
+            background-color: #0044cc;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 30%;
+            font-size: 30px; 
+            font-family: Noto Sans KR Medium;
+        }
     #movieinfo {
         font-size: 30px; 
         font-family: Noto Sans KR Medium;
         color: #ffffff;
     }
-
+	#tb {
+    width: "1200px";
+    border: 5px solid black;
+    border-collapse: collapse;
+    border-spacing: 50px;
+    margin : auto;	
+    color: #ffffff;
+    font-family: Noto Sans KR Medium;
+    font-size: 22px; 
+    }
 
     a {text-decoration:none; color: inherit;}
     
@@ -54,6 +94,51 @@
     body {
         background-color: #000000;
     }
+        .login-container {
+        width: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .login-container h2 {
+        text-align: center;
+    }
+
+    .login-form {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .form-group button:hover {
+        background-color: #45a049;
+    }
 </style>
 </head>
 <body>
@@ -64,9 +149,13 @@
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/movie/movielist.jsp">
         영화목록 </a>
     </td>
-    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/logout.jsp">
-        로그아웃</a>
+    <% if (request.getParameter("id") != null) { %>
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/logout.jsp">로그아웃</a>
     </td>
+    <% } else { %>
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/login.jsp">로그인</a>
+    </td>
+    <% } %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/register.jsp">
         회원가입</a>
     </td>
