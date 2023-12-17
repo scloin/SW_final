@@ -84,6 +84,7 @@
   <input type="hidden" name="movie_title" value="<%=movie_title%>">
   <input type="hidden" name="adult_cnt" value="<%=adult_cnt%>">
   <input type="hidden" name="child_cnt" value="<%=child_cnt%>">
+  
   <button id="book_ticket">예매하기</button>
 </form>
 
