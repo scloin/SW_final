@@ -9,7 +9,7 @@
 <br>
 <body>
 <%@ include file="/noonoocine/head.jsp" %>
-<table id="menu" style="border-spacing: 10px; width:700px; align:center; margin-left:auto; margin-right:auto;" >
+<table id="movielist" >
 <%
 
 String msg = null;
@@ -27,7 +27,7 @@ while(rs.next()){
 	info[1] = rs.getString("genreAlt");
 	info[2] = rs.getString("prdtstatNm");
 	info[3] = rs.getString("directors");
-	info[4] = "/swsw/noonoocine/"+ rs.getString("poster");
+	info[4] = request.getContextPath()+"/noonoocine/"+ rs.getString("poster");
 	if (i%2==0) bgc="#000000";
 	else bgc="#242424";
 	i++;

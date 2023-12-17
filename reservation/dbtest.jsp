@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<%@ page import="thinkonweb.util.ConnectionContext" %>
+<%@ page import="swsw.ConnectionContext" %>
 <%@ page import="java.sql.*" %>
 <html>
 <body>
