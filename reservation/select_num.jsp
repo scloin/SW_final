@@ -5,13 +5,12 @@
   <script>
     function validateForm() {
       var adultCount = document.querySelector('select[name="adult_cnt"]').value;
-      var teenCount = document.querySelector('select[name="child_cnt"]').value;
+      var childCount = document.querySelector('select[name="child_cnt"]').value;
 
-      if (adultCount === "0" && childCount === "0") {
+      if (adultCount == "0" && childCount == "0") {
         alert("적어도 한 명 이상의 인원을 선택해야 합니다.");
         return false; // 폼 제출을 중단
       }
-
       return true; // 폼 제출 계속
     }
   </script>
