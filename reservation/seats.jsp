@@ -1,11 +1,18 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="thinkonweb.util.ConnectionContext" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.sql.*" %>
+
 <html>
 <head><title>영화 예매</title></head>
 <body>
+<h2>영화 예매</h2>
   <%
+  String movie_title=String.valueOf(request.getParameter("movie_title"));
   int adult_cnt=Integer.parseInt(String.valueOf(request.getParameter("adult_cnt")));
   int child_cnt=Integer.parseInt(String.valueOf(request.getParameter("child_cnt")));
   %>
+  선택한 영화는 [<%=movie_title%>] 입니다.<br>
   선택한 인원 : 성인 <%=adult_cnt%>명, 청소년 <%=child_cnt%>명<br><br>
   
 <div id="seats">
@@ -26,12 +33,33 @@
         </tr>
         
         <% 
+        // db
+   		ArrayList<String> bookedSeats = new ArrayList<String>();
+        String sql = "SELECT seat FROM booking where movidCD='20212866'";
+        Connection conn = ConnectionContext.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+          // 모든 좌석을 msg 문자열에 추가
+        while (rs.next()) {
+           bookedSeats.add(rs.getString("seat"));
+        }
+        rs.close();
+        pstmt.close();
+     
         for (int i = 0; i < rows.length(); i++) {
             %><tr>
             <td><%=rows.charAt(i)%></td> <% // 행 레이블
             for (int j = 1; j <= cols; j++) {
                 String seatId = "" + rows.charAt(i) + j;
-                 if (!"A2".equals(seatId) && !"C3".equals(seatId)) { // db와 연동 필요
+                boolean booked=false;
+                for (String bookedSeat : bookedSeats){
+                	if (bookedSeat.equals(seatId)){
+                		booked=true;
+                		break;
+                	}
+                }
+                
+                 if (!booked) {
                     %><td><input type="checkbox" name="seat" value="<%=seatId%>" onclick="onCheckboxClick(this)"></td><%
                 }
                 else {
@@ -53,7 +81,8 @@
     padding: 10px;
   }
 </style>
-  
+
+  <input type="hidden" name="movie_title" value="<%=movie_title%>">
   <input type="hidden" name="adult_cnt" value="<%=adult_cnt%>">
   <input type="hidden" name="child_cnt" value="<%=child_cnt%>">
   <button id="book_ticket">예매하기</button>

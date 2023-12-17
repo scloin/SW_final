@@ -7,8 +7,8 @@
   int adult_cnt = Integer.parseInt(request.getParameter("adult_cnt"));
   int child_cnt = Integer.parseInt(request.getParameter("child_cnt"));
 
-  // 가격 계산 (예: 성인 10000원, 청소년 7000원)
-  int totalCost = adult_cnt * 14000 + child_cnt * 11000;
+  // 가격 계산 (예: 성인 8000원, 청소년 5000원)
+  int totalCost = adult_cnt * 8000 + child_cnt * 5000;
 
   String selectedSeatsStr = String.join(", ", selectedSeats);
   %>
