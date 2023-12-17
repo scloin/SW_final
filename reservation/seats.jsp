@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<%@ page import="thinkonweb.util.ConnectionContext" %>
+<%@ page import="swsw.ConnectionContext" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.sql.*" %>
 
@@ -35,7 +35,7 @@
         <% 
         // db
    		ArrayList<String> bookedSeats = new ArrayList<String>();
-        String sql = "SELECT seat FROM booking where movidCD='20212866'";
+        String sql = "SELECT seat FROM booking as b, movie as m where b.movidCD=m.movidCD and movienm='"+ movie_title +"';";
         Connection conn = ConnectionContext.getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
@@ -53,7 +53,7 @@
                 String seatId = "" + rows.charAt(i) + j;
                 boolean booked=false;
                 for (String bookedSeat : bookedSeats){
-                	if (bookedSeat.equals(seatId)){
+                	if (bookedSeat.indexOf(seatId)>-1){
                 		booked=true;
                 		break;
                 	}
@@ -70,7 +70,6 @@
         <%}%>
       </table>
 </div>
-
 <style>
   table {
     border-collapse: collapse;

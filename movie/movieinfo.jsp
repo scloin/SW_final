@@ -30,7 +30,7 @@ rs.close();
 pstmt.close();
 
 %>
-<form action="../booking/booking.jsp" method="get"><input type="hidden" name="movie" value="<%=moviename %>">
+<form action="../login/logincheck.jsp" method="get"><input type="hidden" name="movie" value="<%=moviename %>">
 <table id="plaintext" style="border-spacing: 30px; align:center; margin-left:auto; margin-right:auto;" >
 <tr><td>
 <a href=<%=info[3] %> title="<%=moviename %>" target="_blank">

@@ -164,16 +164,16 @@
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/movie/movielist.jsp">
         영화목록 </a>
     </td>
-    <% if (request.getParameter("id") != null) { %>
+    <% if (session.getAttribute("id") != null) { %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/logout.jsp">로그아웃</a>
     </td>
     <% } else { %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/login.jsp">로그인</a>
     </td>
-    <% } %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/login/register.jsp">
         회원가입</a>
     </td>
+    <% } %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href="/swsw/noonoocine/db/membersinfo.jsp">
         My Info</a>
     </td>

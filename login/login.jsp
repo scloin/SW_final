@@ -1,15 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
 <meta charset="UTF-8">
 <title>login</title>
 </head>
 <body>
 <%@ include file="/noonoocine/head.jsp" %>
-login page
-
+<%if(request.getParameter("warning").equals("true")){
+	%>
+	<script>
+	alert("로그인이 필요한 작업입니다.\n로그인 후 이용하시기 바랍니다.");
+	</script>
+	<%
+	}
+%>
 <div class="login-container">
     <h2  id="menu">아이디 비밀번호를 입력하신 후 <br>
      로그인 버튼을 클릭해 주세요.</h2>

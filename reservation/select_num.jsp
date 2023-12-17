@@ -17,11 +17,11 @@
 </head>
 <body>
   <h2>영화 예매</h2>
-  <%String movie_title="임시 영화 제목"; // String.valueOf(request.getParameter("adult_cnt"))%>
+  <%String movie_title= String.valueOf(request.getParameter("movie"));%>
   선택한 영화는 [<%=movie_title%>] 입니다.<br><br>
   
   인원을 선택하세요.<br>
-  <form action="seats.jsp" onsubmit="return validateForm()">
+  <form action="<%=request.getContextPath()+"/noonoocine/reservation/seats.jsp"%>" onsubmit="return validateForm()">
     성인 : 
     <select name="adult_cnt">
       <option value="0">0</option>
