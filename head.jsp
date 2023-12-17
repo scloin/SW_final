@@ -85,7 +85,18 @@
     font-family: Noto Sans KR Medium;
     font-size: 22px; 
     }
-
+	
+	#movielist{
+	    font-size: 20px; 
+        font-family: Noto Sans KR Light;
+        color: #ffffff;
+		border-spacing: 10px; 
+		width:700px; 
+		align:center; 
+		margin-left:auto; 
+		margin-right:auto;
+	
+	}
     a {text-decoration:none; color: inherit;}
     
     @keyframes glow {

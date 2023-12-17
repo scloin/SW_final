@@ -6,7 +6,7 @@
 </head>
 <body>
 <%@ include file="/noonoocine/head.jsp" %>
-<%if(request.getParameter("warning").equals("true")){
+<%if(request.getParameter("warning")!=null && request.getParameter("warning").equals("true")){
 	%>
 	<script>
 	alert("로그인이 필요한 작업입니다.\n로그인 후 이용하시기 바랍니다.");
