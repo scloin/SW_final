@@ -30,17 +30,18 @@ pstmt.close();
 
 %>
 <p id="movieinfo" style="width:1200; text-align:left; margin-left:auto; margin-right:auto; background-color:#000000">상영예정작</p>
+
 <table style=" border-radius: 10px; width:1200; height:425px; text-align:center; margin-left:auto; margin-right:auto; background-color:#242424">
     <tr>
     <% for (i=0; i<4; i++){ %>
     <td>
-    <input type="submit" name="movie" style="all: unset; background-size : cover; background-image: url(<%= locates[i]%>); width: 240px;height: 320px; font-size: 0;line-height: 0;" value="<%= movies[i] %>">
+    <img name="movie" style="border:0px;width: 240px;height: 320px" src=<%= locates[i]%>>
     </td><%}%>
     <tr>
     <% for (i=0; i<4; i++){ %>
     <td>
     <p id="moviename"><%=movies[i] %></br>
-    <%=opendt[i]%></p>
+    📅<%=opendt[i]%></p>
     </td><%}%>
     </tr>
 </table>
