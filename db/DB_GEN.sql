@@ -1,8 +1,9 @@
+DROP DATABASE asdf;
 DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS booking;
-
+CREATE DATABASE asdf;
 CREATE TABLE review(
 	movidCD int, 
 	id varchar(10), 
@@ -58,7 +59,14 @@ value
 (20212866, 'user7', 3),
 (20212866, 'user8', 2),
 (20212866, 'user9', 4),
-(20235030, 'user10', 4);
+(20235030, 'user10', 4),
+( 20202247,"mark",5),
+(20202247 ,"4-head",4),
+( 20202247,"nunomi0",3),
+(20202247 ,"scloin",2),
+( 20202247,"scloin",3),
+( 20234957,"4-head",4),
+( 20234957,"mark",5)	;
 
 
 insert into movie
@@ -96,7 +104,11 @@ value
 ('user7', '추수희', '1234', 50, 'F', FALSE),
 ('user8', '윤광현', '1234', 24, 'F', FALSE),
 ('user9', '김예훈', '1234', 54, 'F', FALSE),
-('user10', '신동윤', '1234', 37, 'F', FALSE);
+('user10', '신동윤', '1234', 37, 'F', FALSE),
+('minjung','하민정', '2243', 45, 'F', FALSE),
+('han','한정희', '5561', 17, 'F', FALSE),
+('jaehawn','이재환', '0204', 17, 'M', FALSE),
+('junsun','안준선', '0205', 17, 'M', FALSE);	
 
 insert into booking
 value
