@@ -1,9 +1,9 @@
-DROP DATABASE asdf;
+
 DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS booking;
-CREATE DATABASE asdf;
+
 CREATE TABLE review(
 	movidCD int, 
 	id varchar(10), 
@@ -59,14 +59,7 @@ value
 (20212866, 'user7', 3),
 (20212866, 'user8', 2),
 (20212866, 'user9', 4),
-(20235030, 'user10', 4),
-( 20202247,"mark",5),
-(20202247 ,"4-head",4),
-( 20202247,"nunomi0",3),
-(20202247 ,"scloin",2),
-( 20202247,"scloin",3),
-( 20234957,"4-head",4),
-( 20234957,"mark",5)	;
+(20235030, 'user10', 4);
 
 
 insert into movie
@@ -86,7 +79,11 @@ value
 (20235698, '쏘우 X', '20231213', '개봉예정', '스릴러', '케빈 그루터트', 'image/poster14.png'),
 (20239988, '아쿠아맨과 로스트 킹덤', '20231220', '개봉예정', '액션', '제임스 완', 'image/poster15.png'),
 (20230011, '트롤: 밴드 투게더', '20231220', '개봉예정', '애니메이션', '월트 돈', 'image/poster16.png'),
-(20240000, '지옥 2', '미정', '개봉예정', '스릴러', '연상호', 'image/poster17.png');
+(20240000, '지옥 2', '미정', '개봉예정', '스릴러', '연상호', 'image/poster17.png'),
+(20227514, '폴: 600미터', '20221116', '종영', '스릴러', '스콧 만', 'image/poster18.png'),
+(20162941, '컨저링 2', '20160609', '종영', '공포(호러)', '제임스 완', 'image/poster19.png'),
+(20234673, '뽀로로 극장판 슈퍼스타 대모험', '20231213', '상영 중', '애니메이션', '윤제완', 'image/poster20.png'),
+(20190324, '3일의 휴가', '20231206', '상영 중', '판타지,드라마', '육상효', 'image/poster21.png');
 
 insert into user
 value
