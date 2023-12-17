@@ -1,8 +1,9 @@
+DROP DATABASE asdf;
 DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS booking;
-
+CREATE DATABASE asdf;
 CREATE TABLE review(
 	movidCD int, 
 	id varchar(10), 
