@@ -17,7 +17,7 @@
 </head>
 <body>
   <h2>영화 예매</h2>
-  <%String movie_title="임시 영화 제목"; // String.valueOf(request.getParameter("adult_cnt"))%>
+  <%String movie_title="서울의 봄"; // String.valueOf(request.getParameter("adult_cnt"))%>
   선택한 영화는 [<%=movie_title%>] 입니다.<br><br>
   
   인원을 선택하세요.<br>
