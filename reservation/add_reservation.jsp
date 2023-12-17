@@ -24,7 +24,7 @@
   
   Connection conn = ConnectionContext.getConnection();
   PreparedStatement pstmt = conn.prepareStatement(sql);
-  //int update = pstmt.executeUpdate(sql);
+  int update = pstmt.executeUpdate(sql);
   
   pstmt.close();
   
