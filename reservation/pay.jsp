@@ -28,7 +28,7 @@
     <input type="hidden" name="adult_cnt" value="<%=adult_cnt%>">
     <input type="hidden" name="child_cnt" value="<%=child_cnt%>">
     <input type="hidden" name="totalCost" value="<%=totalCost%>">
-    <button type="submit">결제하기</button>
+    <button type="submit" id="style-bttn">결제하기</button>
   </form>
   </div>
 </body>

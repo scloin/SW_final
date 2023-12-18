@@ -65,7 +65,7 @@ rs2.close();
 pstmt2.close();
 %>
 <p id="movieinfo" style="margin-left:auto; margin-right:auto; width:600px">별점<br></p>
-<table style="margin-left:auto; margin-right:auto; width:600px; background-color: #242424; border-radius:20px; border-spacing: 10px;">
+<table style="margin-left:auto; margin-right:auto; width:600px; height: 300px; background-color: #242424; border-radius:20px; border-spacing: 10px;">
 <tr style="vertical-align:bottom; text-align: center;">
 <%for (int i=0; i<6;i++){ %>
 <td>

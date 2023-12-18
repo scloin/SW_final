@@ -30,7 +30,6 @@
         font-size: 20px; 
         font-family: Noto Sans KR Medium;
         color: #ffffff;
-        
     }
     #gray {
     background-color: #242424;
@@ -47,10 +46,22 @@
         color: #ffffff;
 	}
 	#style-bttn{
-  	all: unset;
-  	background-color:#3366FF;
-  	width:200px; height:50px;
-  	border-radius: 10px;"
+	  	all: unset;
+	  	text-align:center;
+	  	background-color:#3366FF;
+	  	width:200px; height:50px;
+	  	border-radius: 10px;"
+    }
+    #style-select{
+        font-size: 20px; 
+        font-family: Noto Sans KR Medium;
+	    color: #ffffff;
+	    width:100px; 
+	    height:40px; 
+	    color:#ffffff; 
+	    background-color:#424242; 
+	    border:0px; 
+	    border-radius:10px
     }
 	input[type="text"],
 	input[type="password"] {

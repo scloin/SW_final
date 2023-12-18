@@ -27,7 +27,7 @@
   인원을 선택하세요.<br>
   <form action="<%=request.getContextPath()+"/noonoocine/reservation/seats.jsp"%>" onsubmit="return validateForm()">
     성인 : 
-    <select name="adult_cnt">
+    <select name="adult_cnt" id="style-select">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -35,7 +35,7 @@
     </select>
     <br>
     청소년 : 
-    <select name="child_cnt">
+    <select name="child_cnt" id="style-select">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -43,7 +43,7 @@
     </select>
     <br><br>
     <input type="hidden" name="movie_title" value="<%=movie_title%>">
-    <input type="submit" value="좌석 현황 확인">
+    <input type="submit" id="style-bttn" value="좌석 현황 확인">
   </form>
  </div></div>
 </body>

@@ -18,7 +18,12 @@
     
     text-align: center;    
   }
-  
+  #style-bttn{
+  	all: unset;
+  	background-color:#3366FF;
+  	width:200px; height:50px;
+  	border-radius: 10px;"
+  }
 </style>
 </head>
 <body>
@@ -83,7 +88,7 @@
                     %><td id="thtd" style="paddig:0px"><input type="checkbox" name="seat" value="<%=seatId%>" style="width:40px; height:40px;" onclick="onCheckboxClick(this)"></td><%
                 }
                 else {
-                    %><td id="thtd" style="font-size:30px;"><div style="margin-left:auto; margin-right:auto; width:40px;height:40px;background-color:#828282">✕</div></td><%
+                    %><td id="thtd" style="font-size:30px;"><div style="margin-left:auto; margin-right:auto; width:40px;height:40px;background-color:#576F72">✕</div></td><%
                 }
             }%>
             </tr>
@@ -99,7 +104,7 @@
   
 </td>
 <td id="thtd" style="width:400px; border:0px;">
-<button id="style_bttn">예매하기</button>
+<button id="style-bttn">예매하기</button>
 </td></tr>
 </table>
 </form>
