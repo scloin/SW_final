@@ -54,5 +54,9 @@
   stmt.close();
   %>
 </div>
+
+<button type="button" class="submit-btn" style="margin-left: 0;" onclick="location.href='../admin/delete.jsp?st=wd';">탈퇴하기</button>
+
+
 </body>
 </html>
