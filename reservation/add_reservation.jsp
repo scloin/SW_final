@@ -6,6 +6,7 @@
 <head><title>DB에 예약 정보 추가</title></head>
 <body>
   <%
+  try{
   String movie_title=String.valueOf(request.getParameter("movie_title"));
   String selectedSeatsStr = request.getParameter("selectedSeatsStr");
   int adult_cnt = Integer.parseInt(request.getParameter("adult_cnt"));
@@ -29,6 +30,16 @@
   pstmt.close();
   
   response.sendRedirect("../mypage/check_my_reservations.jsp"); 
+  }
+  catch(Exception e)
+  {
+	  %>
+	  <script>
+	  alert("이미 예약한 영화입니다.");
+	  history.go(-4);
+	  </script>
+	  <%
+  }
 %>
 </body>
 </html>

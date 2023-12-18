@@ -13,17 +13,19 @@
     color: #ffffff;
   }
   #thtd {
-
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 10px;
+	width: 50px; 
+	height: 50px;
+    
+    text-align: center;    
   }
+  
 </style>
 </head>
 <body>
 <%@ include file="/noonoocine/head.jsp" %>
-<div id="plaintext" style="width:1000px; margin-left:auto; margin-right:auto; text-align:left;">
 <h2>영화 예매</h2>
+<div id="plaintext" style="width:1000px; margin-left:auto; margin-right:auto; text-align:left;">
+
   <%
   String movie_title=String.valueOf(request.getParameter("movie_title"));
   int adult_cnt=Integer.parseInt(String.valueOf(request.getParameter("adult_cnt")));
@@ -33,15 +35,17 @@
   선택한 인원 : 성인 <%=adult_cnt%>명, 청소년 <%=child_cnt%>명<br><br>
   
 
-    <h3>좌석 선택</h3>
-    <form action="pay.jsp" onsubmit="return validateSeats()">
+  <h3>좌석 선택</h3>
+  <form action="pay.jsp" onsubmit="return validateSeats()">
+  <table id="thea">
+    <tr><td>
       <table id="thea">
         <% 
         String rows = "ABCDEFG";
         int cols = 10;
         %>
 
-        <tr>
+        <tr >
           <td id="thtd"></td> <% // 첫번째 칸 비우기, 열 레이블
           for (int col = 1; col <= cols; col++) { %>
             <td id="thtd"><%=col%></td>
@@ -76,24 +80,30 @@
                 }
                 
                  if (!booked) {
-                    %><td id="thtd"><input type="checkbox" name="seat" value="<%=seatId%>" onclick="onCheckboxClick(this)"></td><%
+                    %><td id="thtd" style="paddig:0px"><input type="checkbox" name="seat" value="<%=seatId%>" style="width:40px; height:40px;" onclick="onCheckboxClick(this)"></td><%
                 }
                 else {
-                    %><td id="thtd">X</td><%
+                    %><td id="thtd" style="font-size:30px;"><div style="margin-left:auto; margin-right:auto; width:40px;height:40px;background-color:#828282">✕</div></td><%
                 }
             }%>
             </tr>
         <%}%>
       </table>
-</div>
+
 
 
   <input type="hidden" name="movie_title" value="<%=movie_title%>">
   <input type="hidden" name="adult_cnt" value="<%=adult_cnt%>">
   <input type="hidden" name="child_cnt" value="<%=child_cnt%>">
   
-  <button id="book_ticket">예매하기</button>
+  
+</td>
+<td id="thtd" style="width:400px; border:0px;">
+<button id="style_bttn">예매하기</button>
+</td></tr>
+</table>
 </form>
+</div>
 
 <script>
 
@@ -127,6 +137,6 @@
     return true; // 폼 제출을 계속
   }
 </script>
-</div>
+
 </body>
 </html>

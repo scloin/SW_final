@@ -51,7 +51,7 @@ pstmt.close();
 <td style="width:20px;height:20px; color:#424242">|</td>
 <td> <%=info[1] %></td></tr>
 <tr><td colspan="3" style="text-align:center;">
-<input type="submit" value="예매하기" name="booking" style="all: unset; background-color:#3366FF;  width:200px; height:50px; border-radius: 10px;">
+<input type="submit" value="예매하기" name="booking" id="style-bttn">
 </td></tr>
 </table>
 </td>

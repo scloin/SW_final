@@ -1,8 +1,10 @@
-<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html>
 <head><title>영화 예매 결제</title></head>
 <body>
+<%@ include file="/noonoocine/head.jsp" %>
+<div id="plaintext" style="width:1000px; margin-left:auto; margin-right:auto; text-align:left;">
   <%
   String movie_title=String.valueOf(request.getParameter("movie_title"));
   String[] selectedSeats = request.getParameterValues("seat");
@@ -28,5 +30,6 @@
     <input type="hidden" name="totalCost" value="<%=totalCost%>">
     <button type="submit">결제하기</button>
   </form>
+  </div>
 </body>
 </html>
