@@ -14,7 +14,6 @@
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String storedpw = null;
-	boolean authority = false;
 	String IDStore = request.getParameter("idstore");
 	Connection conn = ConnectionContext.getConnection(); 
 		    try {
@@ -24,15 +23,20 @@
 			        ResultSet rs = pstmt.executeQuery();
 			        if (rs.next()){
 			        	storedpw = rs.getString("pw");
-			        	authority = rs.getBoolean("authority");
+			        	int authority = rs.getInt("authority");
 			        	if(storedpw != null && storedpw.equals(pw)){
-			        		if(!authority){
+			        		if(authority != 1){
 			        			out.println( id+"님 로그인 되었습니다.");
 			        			if (IDStore != null && IDStore.equals("store")) {
 			        			Cookie cookie = new Cookie("id",id);
 			        			response.addCookie(cookie); }
 			        		}else{
+			        			out.println( "관리자님 로그인 되었습니다.");
 			        			session.setAttribute("auth",authority);
+			        			if (IDStore != null && IDStore.equals("store")) {
+				        			Cookie cookie = new Cookie("id",id);
+				        			response.addCookie(cookie); }
+			        			response.sendRedirect("../admin/admin.jsp");
 			        		}
 			        		session.setAttribute("id",id);
 			        	}
@@ -58,12 +62,8 @@
   
   String check = (String)session.getAttribute("id");
 
-  if(authority){ 
-	  response.sendRedirect("../admin/admin.jsp"); 
- }
-  
-  else {
-	  if(check != null) { %> 
+
+	if(check != null) { %> 
     <a href = "../main.jsp" id="Teal" >
     <div style="background-color:#576F72; width:200px; margin-left:auto; margin-right:auto; border-radius:20px">
     예매하러가기</div></a><br>
@@ -74,8 +74,7 @@
     <a href = "login.jsp" id="Teal" >
     <div style="background-color:#576F72; width:200px; margin-left:auto; margin-right:auto; border-radius:20px">
     로그인 다시하기</div></a>
-    <% } 
-}%>
+    <% } %>
 </div>
 </body>
 </html>
