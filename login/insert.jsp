@@ -53,8 +53,12 @@
     	document.write("<p id='Logo' style='text-align: center;'>이미 존재하는 id입니다. 다시 입력해주세요</p>");
     <% } %>
 </script>
-  <a href = "login.jsp" id="movieinfo" >로그인</a><br>
-  <a href = "../main.jsp" id="movieinfo" >처음으로</a><br>
-  <a href = "registser.jsp" id="movieinfo" >다시하기</a> 
+
+  <a href = "login.jsp" id="movieinfo"><div style="background-color:#576F72; width:100px; margin-left:auto; margin-right:auto; border-radius:10px">
+    로그인</div></a><br>
+  <a href = "../main.jsp" id="movieinfo"><div style="background-color:#576F72; width:120px; margin-left:auto; margin-right:auto; border-radius:10px">
+  처음으로</div></a><br>
+  <a href = "register.jsp" id="movieinfo" ><div style="background-color:#576F72; width:120px; margin-left:auto; margin-right:auto; border-radius:10px">
+  다시하기</div></a> 
 </body>
 </html>
