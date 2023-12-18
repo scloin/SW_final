@@ -15,6 +15,7 @@
 	String pw = request.getParameter("pw");
 	String storedpw = null;
 	boolean authority = false;
+	String IDStore = request.getParameter("idstore");
 	Connection conn = ConnectionContext.getConnection(); 
 		    try {
 		    	String sql = "SELECT pw, authority From user Where id='"+id+"';";
@@ -27,6 +28,9 @@
 			        	if(storedpw != null && storedpw.equals(pw)){
 			        		if(!authority){
 			        			out.println( id+"님 로그인 되었습니다.");
+			        			if (IDStore != null && IDStore.equals("store")) {
+			        			Cookie cookie = new Cookie("id",id);
+			        			response.addCookie(cookie); }
 			        		}else{
 			        			session.setAttribute("auth",authority);
 			        		}
