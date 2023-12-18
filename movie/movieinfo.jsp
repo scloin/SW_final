@@ -51,7 +51,9 @@ pstmt.close();
 <td style="width:20px;height:20px; color:#424242">|</td>
 <td> <%=info[1] %></td></tr>
 <tr><td colspan="3" style="text-align:center;">
+<%if (info[1].equals("상영 중")) {%>
 <input type="submit" value="예매하기" name="booking" id="style-bttn">
+<%} %>
 </td></tr>
 </table>
 </td>

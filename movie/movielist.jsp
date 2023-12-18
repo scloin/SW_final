@@ -8,6 +8,7 @@
 </head>
 <body>
 <%@ include file="/noonoocine/head.jsp" %>
+<form action="../movie/movieinfo.jsp" method="get">
 <table id="movielist" >
 <%
 
@@ -32,7 +33,7 @@ while(rs.next()){
 	i++;
 %>
 <tr><td>
-<img src=<%=info[4] %> width="69px" height="100px">
+<input type="submit" name="movie" style="all: unset; background-size : cover; background-image: url(<%= info[4]%>); width: 69px;height: 100px; font-size: 0;line-height: 0;" value="<%= info[0]%>">
 </td>
 <td style="background-color: <%= bgc%>; border-radius:10px;">
 <p>영화 이름 : <%=info[0] %><br>
@@ -48,5 +49,6 @@ rs.close();
 pstmt.close();
 %>
 </table>
+</form>
 </body>
 </html>
