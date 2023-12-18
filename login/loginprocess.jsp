@@ -26,7 +26,7 @@
 			        	authority = rs.getBoolean("authority");
 			        	if(storedpw != null && storedpw.equals(pw)){
 			        		if(!authority){
-			        			out.println( "사용자님 로그인 되었습니다.");
+			        			out.println( id+"님 로그인 되었습니다.");
 			        		}else{
 			        			session.setAttribute("auth",authority);
 			        		}
@@ -60,15 +60,15 @@
   
   else {
 	  if(check != null) { %> 
-    <a href = "../main.jsp" id="movieinfo" >
-    <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+    <a href = "../main.jsp" id="Teal" >
+    <div style="background-color:#576F72; width:200px; margin-left:auto; margin-right:auto; border-radius:20px">
     예매하러가기</div></a><br>
-    <a href = "logout.jsp" id="movieinfo" >
-    <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+    <a href = "logout.jsp" id="Teal" >
+    <div style="background-color:#576F72; width:200px; margin-left:auto; margin-right:auto; border-radius:20px">
     로그아웃</div></a><br>
     <% } else { %>
-    <a href = "login.jsp" id="movieinfo" >
-    <div style="background-color:#f47835; width:200px; height:60px; margin-left:auto; margin-right:auto; border-radius:30px; line-height : 60px;">
+    <a href = "login.jsp" id="Teal" >
+    <div style="background-color:#576F72; width:200px; margin-left:auto; margin-right:auto; border-radius:20px">
     로그인 다시하기</div></a>
     <% } 
 }%>
