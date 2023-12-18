@@ -64,7 +64,7 @@
     color: white;
 	}
    .submit-btn {
-            background-color: #0044cc;
+            background-color: #678983;
             color: white;
             padding: 15px;
             font-size: 24px;
@@ -81,6 +81,19 @@
         font-size: 30px; 
         font-family: Noto Sans KR Medium;
         color: #ffffff;
+    }
+    #Teal {
+        font-size: 30px; 
+        font-family: Noto Sans KR Medium;
+        color: #ffffff;    
+        height:60px; 
+        margin-left:auto; 
+        margin-right:auto;
+        line-height : 60px;
+        border-radius:30px;
+        background-color:#576F72;
+        width:200px; 
+        color: #E4DCCF;
     }
 	#tb {
     width: "1200px";
@@ -108,7 +121,7 @@
     
     @keyframes glow {
         0% { text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000; }
-        50% { text-shadow: 0 0 20px #ffd300, 0 0 30px #ffd300, 0 0 40px #ffd300; }
+        50% { text-shadow: 0 0 20px #7D9D9C, 0 0 30px #7D9D9C, 0 0 40px #7D9D9C; }
         100% { text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000; }
     }
     span {
@@ -152,24 +165,25 @@
     }
 
     .form-group button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4CAF50;
+        width: 300px;
+        padding: 15px;
+        background-color: #678983;
         color: white;
         border: none;
-        border-radius: 4px;
+        border-radius: 10px;
         cursor: pointer;
+        font-size: 30px;
+        font-family: Noto Sans KR Medium;
+        display: block;
+        margin : auto;
     }
 
-    .form-group button:hover {
-        background-color: #45a049;
-    }
 </style>
 </head>
 <body>
 <table style="width:1000; align:center; margin-left:auto; margin-right:auto;">
     <tr>
-    <td style="width:700;" id="Logo"><a href=<%=request.getContextPath()+"/noonoocine/main.jsp"%>>열<span id="glowingtitle" style="color: #FFD300">무비</span>빔밥</a></td>
+    <td style="width:700;" id="Logo"><a href=<%=request.getContextPath()+"/noonoocine/main.jsp"%>>열<span id="glowingtitle" style="color: #678983">무비</span>빔밥</a></td>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/movie/movielist.jsp"%>>
         영화목록 </a>
     </td>
@@ -186,6 +200,8 @@
     <% if (session.getAttribute("auth") != null) { %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/admin/admin.jsp"%>>
         영화 추가</a>
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/admin/member.jsp"%>>
+    	회원 수정</a>
     <% } else { %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/login/logincheck.jsp?userinfo=tr"%>>
         My Info</a>
