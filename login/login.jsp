@@ -13,14 +13,34 @@
 	</script>
 	<%
 	}
+String cookid = null;
+boolean ck =  false;
+Cookie[] cookies = request.getCookies();  
+if (cookies != null && cookies.length > 0) {
+    for (int i = 0 ; i < cookies.length ; i++) {
+       if (cookies[i].getName().equals("id")) {
+    	   cookid = cookies[i].getValue();
+    	   ck = true;
+       }
+    }
+}
 %>
 <div class="login-container">
     <h2  id="menu">아이디 비밀번호를 입력하신 후 <br>
      로그인 버튼을 클릭해 주세요.</h2>
     <form class="login-form" action="../login/loginprocess.jsp" method="get">
         <div class="form-group">
+        <%if(ck) { %>
             <label for="username"  id="me" >Id</label>
-            <input type="text" id="id" name="id" maxlength="10" size="40" placeholder="ex) hong123" required>
+            <input type="text" id="id" name="id" value="<%= cookid %>" maxlength="10" size="40" required>
+        <% } else {%>
+        <label for="username"  id="me" >Id</label>
+            <input type="text" id="id" name="id" maxlength="10" size="40"  placeholder="ex) hong" required>
+        <% } %>
+        </div>    
+        <div >
+        	<label id="me">아이디 기억하기</label>
+        	<input type="checkbox" name="idstore" value="store"></input><br/>
         </div>
         <div class="form-group">
             <label for="password"  id="me">Password</label>
