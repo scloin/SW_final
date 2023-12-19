@@ -213,6 +213,8 @@
         영화 추가</a>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/admin/member.jsp"%>>
     	회원 수정</a>
+    <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/admin/booklist.jsp"%>>
+    	예매 현황</a>    	
     <% } else { %>
     <td style="width:100; text-align:right; vertical-align:bottom" id="menu"><a href=<%=request.getContextPath()+"/noonoocine/login/logincheck.jsp?userinfo=tr"%>>
         My Info</a>
