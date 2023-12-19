@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="swsw.ConnectionContext" %>
+<%@ page import="thinkonweb.util.ConnectionContext" %>
 <%@ page import="java.sql.*" %>
 
 <html>
@@ -13,8 +13,10 @@
   String sql= " select sb.*,r.rating "+
   	"from (select movienm,b.* from booking as b, movie as m where b.movidcd=m.movidcd) as sb "+
 	"left outer join review as r on sb.id=r.id and sb.movidCD=r.movidCD where sb.id='"+id+"';";
+  
   Connection conn = ConnectionContext.getConnection();
   Statement stmt = conn.createStatement();
+  Statement stmt2 = conn.createStatement();
   ResultSet rs = stmt.executeQuery(sql);
   out.println(id+"님의 예매 내역입니다.<br><br>");
   %>
@@ -30,10 +32,20 @@
 	  String seat = rs.getString("seat");
 	  int price = rs.getInt("price");
 	  
+	  // otherid
+	  String sql2="SELECT id FROM booking WHERE movidCD='"+movie_id+"' AND id!='"+id+"'";
+	  ResultSet rs2=stmt2.executeQuery(sql2);
+	  String otherid = "";
+	  while (rs2.next()) {
+		  otherid+=rs2.getString("id")+", ";
+	  }
+	  if (otherid.length()>0) otherid=otherid.substring(0,otherid.length()-2);
+	  
 	  out.println("영화 제목 : "+movie_title+"<br>");
 	  out.println("상영 일시 : 20"+opendt.substring(0,2)+"년 "+opendt.substring(4,6)+"월 "+opendt.substring(6)+"일"+"<br>");
 	  out.println("이용 좌석 : "+seat+"<br>");
-	  out.println("결제 금액 : "+price+"원<br><br>");
+	  out.println("결제 금액 : "+price+"원<br>");
+	  out.println("동일 예매 영화 예약자들 id list : "+otherid+"<br>");
 	  
 	    out.println("<form action='../mypage/add_rating.jsp' method='post'>");
 	    if (rating==null){
